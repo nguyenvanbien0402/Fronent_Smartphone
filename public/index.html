@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js">
+    <link rel="stylesheet" href="https://cdn.usebootstrap.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+
+
+    <!-- css -->
+    <style>
+      /* header css */
+      * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        box-sizing: border-box;
+      }
+
+      a:link {
+        text-decoration: none;
+      }
+      .logo,
+      .form-search,
+      .check-order,
+      .check-cart {
+        padding: 0px;
+      }
+      .form-search input {
+        width: 90%;
+        height: 50px;
+        padding: 5px;
+      }
+      .icon {
+        color: #20714e;
+      }
+      .banner {
+        width: 100%;
+        height: auto;
+      }
+      .header {
+        padding: 20px 20px 15px 20px;
+      }
+
+      /* nav css */
+      .nav-item {
+        width: 130px;
+        text-align: center;
+        color: white;
+      }
+
+      .nav-item:hover {
+        background-color: #336666;
+      }
+
+      .nav-link:hover {
+        background-color: #336666;
+      }
+      .list-group-item {
+        background-color: #f8f8ff;
+        border-bottom: 2px solid #eeeeee;
+      }
+
+      .list-group-item:hover {
+        color: black;
+        font-weight: bold;
+      }
+
+      /* slider css */
+      .slider {
+        background-color:#F3F3F3;
+      }
+      .bg-pink {
+        background-color: #FDC4AD;
+      }
+      .bg-blue {
+        background-color: #3EAFDD;
+      }
+       .bg-yellow {
+        background-color: #FEDF02;
+       }
+      /* list-product */
+      .product-item {
+        width: 100%;
+        height: auto;
+      }
+      /* footer */
+      ul li  {
+        list-style: none;
+      }
+      #nameUser {
+        color: red;
+        margin: 0px;
+        line-height: 1;
+      }
+      
+  .itemHover {
+    position: absolute;
+    display: none;
+    background-color: #fff;
+    color: #000;
+    z-index: 1;
+    width: 279.2px;
+ 
+  }
+  .itemHover li a {
+    text-decoration: none;
+    display: block;
+    padding: 5px 5px 5px 25px;
+    color: #000;
+    font-weight: 400;
+    font-family: Arial,Helvetica,sans-serif;
+  }
+  .itemHover li a:hover {
+    font-weight: bolder;
+  }
+
+  #dropPanel  {
+   position: relative;
+   display: inline-block;
+  }
+  #dropPanel:hover .itemHover {
+    display: block;
+  }
+
+/* hover  */
+.img-item {
+  transition: all 300ms ease-in-out;
+}
+.img-item:hover {
+  transform: scale(1.1);
+}
+
+
+
+/*  */
+.opptionHover {
+    position: absolute;
+    display: none;
+    background-color: #fff;
+    color: #000;
+    z-index: 1;
+    width: 122px;
+
+ 
+  }
+  .opptionHover li a {
+    text-decoration: none;
+    display: block;
+    padding: 3px 3px 3px 10px;
+    color: #000;
+    font-weight: 400;
+    font-family: Arial,Helvetica,sans-serif;
+  }
+  .opptionHover li a:hover {
+    font-weight: bolder;
+  }
+
+  #accountPanel  {
+   position: relative;
+   display: inline-block;
+  }
+  #accountPanel:hover .opptionHover {
+    display: block;
+  }
+/*  */
+
+#cat {
+  position: relative;
+}
+#slcart {
+  position: absolute;
+  z-index: 1;
+  top: -11px;
+ right: 6px;
+ background-color: #d0021c;
+ color: #fff;
+ padding: 0px 5px;
+ border-radius: 15px;
+}
+#truck {
+  position: relative;
+}
+#sltruck {
+  position: absolute;
+  z-index: 1;
+  top: -11px;
+ left: 35px;
+ background-color: #d0021c;
+ color: #fff;
+ padding: 0px 5px;
+ border-radius: 20px;
+}
+
+
+/*  */
+
+#item {
+    margin: 10px 0px;
+    width: 235px;
+    height: auto;
+    padding: 35px 15px 15px 15px;
+    border-radius: 5px;
+  }
+
+  #nameItem {
+    color: #333;
+    margin-top: 15px;
+    line-height: 0.7;
+    font-size: 16px;
+    font-family: Arial,Helvetica,sans-serif;
+
+  }
+
+  #priceItem{
+    font-weight: bold;
+    color: #d0021c;
+    line-height: 0.7;
+    font-size: 18px;
+    font-family: Arial,Helvetica,sans-serif;
+  }
+  #discountItem {
+    color: #d0021c;
+    font-size: 16px;
+    background-color: #FFF0E9;
+    padding: 4px 4px  2px 0px ;
+    border-radius: 2px;
+  }
+  #discountPrice {
+    color: #d0021c;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: Arial,Helvetica,sans-serif;
+    line-height: 0.7;
+    background-color: #FFF0E9;
+    display: inline-block;
+    padding: 8px;
+    border-radius: 2px;
+  }
+
+  #viewItem{
+    line-height: 0.7;
+    font-size: 14px;
+    background-color: #EE820B;
+    font-family: Arial,Helvetica,sans-serif;
+    display: inline-block;
+    padding: 5px;
+    color: #fff;
+    border-radius: 5px;
+  }
+
+  #all-item{ 
+    color: #333333;
+    font-size: 24px;
+    font-weight: bolder;
+    font-family: Arial,Helvetica,sans-serif;
+
+   
+  }
+    </style>
+  </head>
+  <body class="sb-nav-fixed">
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="js/datatables-simple-demo.js"></script>
+    <script src="../src/assets/js/datatables-simple-demo.js"></script>
+    <script src="../src/assets/js/scripts.js"></script>
+    
+
+    <script>
+      window.addEventListener('DOMContentLoaded', event => {
+
+// Toggle the side navigation
+const sidebarToggle = document.body.querySelector('#sidebarToggle');
+if (sidebarToggle) {
+    // Uncomment Below to persist sidebar toggle between refreshes
+    if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
+        document.body.classList.toggle('sb-sidenav-toggled');
+    }
+    sidebarToggle.addEventListener('click', event => {
+        event.preventDefault();
+        document.body.classList.toggle('sb-sidenav-toggled');
+        localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
+    });   
+}
+
+});
+window.addEventListener('DOMContentLoaded', event => {
+    // Simple-DataTables
+    // https://github.com/fiduswriter/Simple-DataTables/wiki
+
+    const datatablesSimple = document.getElementById('datatablesSimple');
+    if (datatablesSimple) {
+        new simpleDatatables.DataTable(datatablesSimple);
+    }
+});
+
+
+    </script>
+       <script
+       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+       crossorigin="anonymous"
+     ></script>
+     <script>
+      $(".carousel").carousel({
+        interval: 2000,
+      });
+    </script>
+       <link
+       rel="stylesheet"
+       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+       crossorigin="anonymous"
+     />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.23.0/bootstrap-vue.min.js">
+
+  </script>
+     <script
+     src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+     crossorigin="anonymous"
+   ></script>
+
+
+   <!-- web stomp protocol and stock js  -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.4.0/sockjs.js"></script>
+  </body>
+</html>

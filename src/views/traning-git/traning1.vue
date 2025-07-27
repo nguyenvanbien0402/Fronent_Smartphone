@@ -1,8 +1,8 @@
 <template>
   <div>
     <p>just training for git</p>
-    <!-- test -->
   </div>
+  <!-- test copy change -->
 </template>
 
 <script></script>
